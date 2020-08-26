@@ -227,6 +227,7 @@
  * M504 - Validate EEPROM contents. (Requires EEPROM_SETTINGS)
  * M524 - Abort the current SD print job started with M24. (Requires SDSUPPORT)
  * M540 - Enable/disable SD card abort on endstop hit: "M540 S<state>". (Requires SD_ABORT_ON_ENDSTOP_HIT)
+ * M557 - Set Z probe point or define probing grid
  * M569 - Enable stealthChop on an axis. (Requires at least one _DRIVER_TYPE to be TMC2130/2160/2208/2209/5130/5160)
  * M600 - Pause for filament change: "M600 X<pos> Y<pos> Z<raise> E<first_retract> L<later_retract>". (Requires ADVANCED_PAUSE_FEATURE)
  * M603 - Configure filament change: "M603 T<tool> U<unload_length> L<load_length>". (Requires ADVANCED_PAUSE_FEATURE)
@@ -857,6 +858,9 @@ private:
   TERN_(MAX7219_GCODE, static void M7219());
 
   TERN_(CONTROLLER_FAN_EDITABLE, static void M710());
+
+  TERN_(AUTO_BED_LEVELING_BILINEAR, static void M557());
+
 
   static void T(const uint8_t tool_index);
 

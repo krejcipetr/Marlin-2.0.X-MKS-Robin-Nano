@@ -35,7 +35,7 @@
   #include "../../../lcd/extui/ui_api.h"
 #endif
 
-xy_pos_t bilinear_grid_spacing, bilinear_start;
+xy_pos_t bilinear_grid_spacing, bilinear_start, bilinear_stop;
 xy_float_t bilinear_grid_factor;
 bed_mesh_t z_values;
 
